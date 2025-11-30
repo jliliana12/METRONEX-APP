@@ -1,4 +1,4 @@
-Sistema de Trazabilidad de Equipos METRONEX – COLMETRO SAS
+*Sistema de Trazabilidad de Equipos METRONEX – COLMETRO SAS*
 
 Este proyecto es una aplicación web desarrollada con Flask (Python) para gestionar el registro, trazabilidad y control de básculas, balanzas y equipos de pesaje en un laboratorio metrológico.
 Permite registrar equipos, actualizar su estado, consultar historial, generar informes y recibir alertas internas.
@@ -66,7 +66,6 @@ Módulo para generar y descargar informes de trazabilidad
 📁 Instalación Local
 # 1. Clonar el repositorio
 git clone https://github.com/jliliana12/METRONEX-APP.git
-cd trazabilidad_equipos
 
 # 2. Crear entorno virtual 
 python -m venv venv
@@ -90,6 +89,7 @@ Año: 2025
 
 
 Este proyecto es de uso académico y no tiene fines comerciales.
+
 
 
 
