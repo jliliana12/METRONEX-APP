@@ -1,7 +1,7 @@
-Sistema de Trazabilidad de Equipos en Reparación
-🏢 Proyecto Simulado para Laboratorio de Metrología Colmetro SAS
+📘 Sistema de Trazabilidad de Equipos METRONEX – COLMETRO SAS
 
-Este proyecto simula un sistema web para registrar, rastrear y controlar el ingreso, reparación y entrega de equipos como básculas y balanzas, mejorando el control interno y la atención al cliente.
+Este proyecto es una aplicación web desarrollada con Flask (Python) para gestionar el registro, trazabilidad y control de básculas, balanzas y equipos de pesaje en un laboratorio metrológico.
+Permite registrar equipos, actualizar su estado, consultar historial, generar informes y recibir alertas internas.
 
 *Objetivos del Proyecto*
 
@@ -15,60 +15,66 @@ Este proyecto simula un sistema web para registrar, rastrear y controlar el ingr
 
 *Tecnologías Utilizadas*
 
-Herramienta	Función
-Python con Flask:	Backend y lógica de negocio.
-SQLite / PostgreSQL (Railway):	Almacenamiento de datos de los equipos.
-HTML, CSS, JS y Bootstrap:	Interfaz de usuario moderna y adaptable.
-Visual Studio Code:	Entorno de desarrollo.
-Git & GitHub:	Control de versiones del código fuente.
-Figma:	Diseño de interfaz y prototipado.
-GitHub Pages / Railway:	Despliegue del proyecto.
-LambdaTest:	Pruebas multiplataforma.
-Google Lighthouse:	Auditoría de calidad.
-Google Docs:	Documentación general.
+Frontend:
+
+- HTML5
+
+- CSS3
+
+- Bootstrap 5
+
+- Bootstrap Icons
+
+Backend:
+
+- Python 3
+
+- Flask
+
+- Jinja2
+
+Control de versión:
+
+- Git
+
+- GitHub
 
 *Estructura del Proyecto*
+🚀 Funcionalidades Principales
+✔ Registrar equipos
 
-🖥️ Funcionalidades Simuladas
+Formulario para agregar información técnica del equipo recibido.
 
-✅ Registro de ingreso de equipos con número de serie.
+✔ Actualizar estado
 
-🔍 Consulta de equipos por estado o número de serie.
+Cambiar estado: recibido, en diagnóstico, reparación, calibración, entregado, etc.
 
-🛠️ Estados del proceso: Recibido, En reparación, Listo, Entregado.
+✔ Historial
 
-📊 Generación de informes de trazabilidad.
+Visualiza cambios, estados y fechas asociados a cada equipo.
 
-🔐 Control básico de acceso simulado.
+✔ Alertas
 
-🚀 Despliegue del Proyecto
+Genera alertas internas (por ejemplo: equipos retrasados).
 
-Railway: backend y base de datos PostgreSQL.
+✔ Informes
 
-GitHub Pages: despliegue opcional solo del frontend.
-
-🧪 Pruebas y Evaluación
-
-🔍 Compatibilidad en navegadores con LambdaTest.
-
-📉 Auditoría de rendimiento con Google Lighthouse.
-
-🧪 Validación de flujos de ingreso y consulta.
+Módulo para generar y descargar informes de trazabilidad
 
 📁 Instalación Local
 # 1. Clonar el repositorio
 git clone https://github.com/usuario/trazabilidad_equipos.git
 cd trazabilidad_equipos
 
-# 2. Crear entorno virtual (opcional)
+# 2. Crear entorno virtual 
 python -m venv venv
-venv\Scripts\activate  # Windows
+venv\Scripts\activate 
 
 # 3. Instalar dependencias
 pip install -r requirements.txt
 
 # 4. Ejecutar la aplicación
-python run.py
+python app.py
 
 👩‍💻 Autor
 
@@ -79,5 +85,6 @@ Empresa simulada: Laboratorio de Metrología Colmetro SAS
 Año: 2025
 
 📜 Licencia
+
 
 Este proyecto es de uso académico y no tiene fines comerciales.
