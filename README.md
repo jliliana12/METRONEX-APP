@@ -40,7 +40,9 @@ Control de versión:
 - GitHub
 
 *Estructura del Proyecto*
-🚀 Funcionalidades Principales
+
+Funcionalidades Principales
+
 ✔ Registrar equipos
 
 Formulario para agregar información técnica del equipo recibido.
@@ -88,3 +90,4 @@ Año: 2025
 
 
 Este proyecto es de uso académico y no tiene fines comerciales.
+
