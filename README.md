@@ -65,7 +65,7 @@ Módulo para generar y descargar informes de trazabilidad
 
 📁 Instalación Local
 # 1. Clonar el repositorio
-git clone https://github.com/usuario/trazabilidad_equipos.git
+git clone [https://github.com/usuario/trazabilidad_equipos.git](https://github.com/jliliana12/METRONEX-APP.git)
 cd trazabilidad_equipos
 
 # 2. Crear entorno virtual 
@@ -90,5 +90,6 @@ Año: 2025
 
 
 Este proyecto es de uso académico y no tiene fines comerciales.
+
 
 
