@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+from flask import jsonify, request
+from waitress import serve  # Opcional para pruebas locales
 
 app = Flask(__name__)
 
@@ -26,6 +28,6 @@ def alertas():
 def informes():
     return render_template("informes.html")
 
-
+# Para pruebas locales (opcional)
 if __name__ == "__main__":
-    app.run(debug=True)
+    serve(app, host="0.0.0.0", port=8000)
