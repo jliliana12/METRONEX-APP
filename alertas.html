@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alertas Críticas</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f2f2f2; 
+        }
+
+        .navbar {
+            background-color: #ff7f00 !important; 
+        }
+
+        .navbar-brand, 
+        .navbar-nav .nav-link {
+            color: #ffffff !important; 
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+        }
+
+        
+        .estado-espera {
+            background-color: red !important;
+            color: white !important;
+        }
+
+        .estado-proceso, 
+        .estado-calibracion {
+            background-color: orange !important;
+            color: white !important;
+        }
+
+        .estado-reparado {
+            background-color: green !important;
+            color: white !important;
+        }
+
+        .estado-pendiente {
+            background-color: yellow !important;
+            color: black !important;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <i class="bi bi-tools"></i> METRONEX - COLMETRO
+        </a>
+
+        <div class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="/"><i class="bi bi-house"></i> Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="/registrar"><i class="bi bi-plus-circle"></i> Registrar</a></li>
+                <li class="nav-item"><a class="nav-link" href="/actualizar_estado"><i class="bi bi-arrow-repeat"></i> Actualizar</a></li>
+                <li class="nav-item"><a class="nav-link" href="/historial"><i class="bi bi-clock-history"></i> Historial</a></li>
+                <li class="nav-item"><a class="nav-link" href="/alertas"><i class="bi bi-exclamation-triangle"></i> Alertas</a></li>
+                <li class="nav-item"><a class="nav-link" href="/informes"><i class="bi bi-file-earmark-text"></i> Informes</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+
+<h2 class="mb-4"><i class="bi bi-exclamation-triangle"></i> Equipos con Alertas</h2>
+
+<div class="row">
+
+    
+    <div class="col-md-4">
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Bascula de 150 kg - TEK</h5>
+                <p class="card-text">
+                    Estado: <strong>Reparado</strong><br>
+                    Fecha Recepción: 2025-05-16
+                </p>
+
+                <span class="badge estado-reparado">Reparado</span>
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="col-md-4">
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Balanza Digital - 3000 g</h5>
+                <p class="card-text">
+                    Estado: <strong>En espera</strong><br>
+                    Fecha Recepción: 2025-06-06
+                </p>
+
+                <span class="badge estado-espera">En espera</span>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="col-md-4">
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Balanza Digital - 3000 g</h5>
+                <p class="card-text">
+                    Estado: <strong>En calibración</strong><br>
+                    Fecha Recepción: 2025-06-06
+                </p>
+
+                <span class="badge estado-calibracion">En calibración</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<footer class="text-center text-muted mt-5 mb-3">
+    &copy; 2025 COLMETRO S.A.S. | Software para sistema de Trazabilidad
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

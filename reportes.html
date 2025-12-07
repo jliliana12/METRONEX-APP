@@ -1,0 +1,15 @@
+<h1>Reportes</h1>
+<table border="1">
+<tr><th>ID</th><th>Tipo</th><th>Modelo</th><th>Cliente</th><th>Estado</th><th>Recepción</th><th>Última Actualización</th></tr>
+{% for equipo in equipos %}
+<tr>
+<td>{{ equipo[0] }}</td>
+<td>{{ equipo[1] }}</td>
+<td>{{ equipo[2] }}</td>
+<td>{{ equipo[3] }}</td>
+<td>{{ equipo[4] }}</td>
+<td>{{ equipo[5] }}</td>
+<td>{{ equipo[6] }}</td>
+</tr>
+{% endfor %}
+</table>

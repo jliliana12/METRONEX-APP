@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Reparaciones</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .navbar {
+            background-color: #ff7b00;
+        }
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+            font-weight: 600;
+        }
+        .nav-link:hover {
+            color: #e6e6e6 !important;
+        }
+
+        h2 {
+            color: #4b4f52;
+            font-weight: 700;
+        }
+
+        .table-container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        thead {
+            background-color: #4b4f52;
+            color: #fff;
+        }
+
+        tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .btn-action {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 5px;
+            transition: 0.3s;
+        }
+
+        .btn-edit {
+            color: #ff7b00;
+        }
+        .btn-edit:hover {
+            color: #cc6500;
+            transform: scale(1.1);
+        }
+
+        .btn-delete {
+            color: #dc3545;
+        }
+        .btn-delete:hover {
+            color: #a71d2a;
+            transform: scale(1.1);
+        }
+
+        footer {
+            color: #6c757d;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <i class="bi bi-tools"></i> METRONEX - COLMETRO S.A.S.
+        </a>
+
+        <div class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="/"><i class="bi bi-house"></i> Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="/registrar"><i class="bi bi-plus-circle"></i> Registrar</a></li>
+                <!-- 🔥 Eliminado porque causaba error -->
+                <!-- <li class="nav-item"><a class="nav-link" href="/actualizar_estado"><i class="bi bi-arrow-repeat"></i> Actualizar</a></li> -->
+                <li class="nav-item"><a class="nav-link" href="/historial"><i class="bi bi-clock-history"></i> Historial</a></li>
+                <li class="nav-item"><a class="nav-link" href="/alertas"><i class="bi bi-exclamation-triangle"></i> Alertas</a></li>
+                <li class="nav-item"><a class="nav-link" href="/informes"><i class="bi bi-file-earmark-text"></i> Informes</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+
+    <h2 class="mb-4"><i class="bi bi-clock-history"></i> Historial de Estados</h2>
+
+    <div class="table-container">
+        <div class="table-responsive">
+            <table class="table table-hover text-center align-middle">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Equipo</th>
+                        <th>Estado Anterior</th>
+                        <th>Estado Nuevo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for equipo in equipos %}
+                    <tr>
+                        <td>{{ equipo.fecha }}</td>
+                        <td>{{ equipo.nombre }}</td>
+                        <td>{{ equipo.estado_anterior }}</td>
+                        <td>{{ equipo.estado }}</td>
+
+                        <td>
+                            <a class="btn-action btn-edit" 
+                               href="{{ url_for('actualizar_estado', id=equipo.id) }}">
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
+
+                            <button class="btn-action btn-delete">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<footer class="text-center text-muted mt-5 mb-3">
+    &copy; 2025 COLMETRO S.A.S. | Sistema de Trazabilidad
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
