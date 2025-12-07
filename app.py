@@ -13,6 +13,7 @@ def index():
     equipos = get_all()
     return render_template("index.html", equipos=equipos)
 
+
 @app.route("/registrar", methods=["GET", "POST"])
 def registrar():
     if request.method == "POST":
@@ -22,7 +23,8 @@ def registrar():
         return redirect(url_for("index"))
     return render_template("registrar.html")
 
-@app.route("/actualizar_estado/<int:id>", methods=["GET","POST"])
+
+@app.route("/actualizar_estado/<int:id>", methods=["GET", "POST"])
 def actualizar_estado(id):
     if request.method == "POST":
         nuevo = request.form.get("estado")
@@ -30,15 +32,18 @@ def actualizar_estado(id):
         return redirect(url_for("historial"))
     return render_template("actualizar_estado.html", id=id)
 
+
 @app.route("/historial")
 def historial():
     equipos = get_all()
     return render_template("historial.html", equipos=equipos)
 
+
 @app.route("/alertas")
 def alertas():
     equipos = get_all()
     return render_template("alertas.html", equipos=equipos)
+
 
 @app.route("/informes")
 def informes():
@@ -46,8 +51,11 @@ def informes():
     return render_template("informes.html", equipos=equipos)
 
 
+# Inicializar BD
 init_db()
 
 
+# ✔ Corrección para Render (sin gunicorn)
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=False, host="0.0.0.0", port=port)
